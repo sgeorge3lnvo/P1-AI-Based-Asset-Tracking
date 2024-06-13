@@ -3,20 +3,11 @@ import numpy as np
 from pytesseract import image_to_string
 import pytesseract as pyt
 import pandas as pd
-import time
-import os
-
-
-
-
-#os.system("python ./face_recognition_demo.py -i 0 -m_fd ~/ovdemos/open_model_zoo/demos/face_recognition_demo/python/intel/face-detection-retail-0004/FP32/face-detection-retail-0004.xml -m_lm ~/ovdemos/open_model_zoo/demos/face_recognition_demo/python/intel/landmarks-regression-retail-0009/FP32/landmarks-regression-retail-0009.xml -m_reid ~/ovdemos/open_model_zoo/demos/face_recognition_demo/python/intel/face-reidentification-retail-0095/FP32/face-reidentification-retail-0095.xml --verbose --output_resolution 3840x2160 -fg '/home/test/ovdemos/open_model_zoo/demos/face_recognition_demo/python/face_gallery' -d_fd CPU -d_lm CPU -d_reid CPU")
-#time.sleep(5)
-
 
 # Initialize camera
 cap = cv2.VideoCapture(0)  # 0 would make the program use the laptop's camera
 
-# Set PATH to tesseract installation for window installation ONLY
+# Set PATH to tesseract installation
 pyt.pytesseract.tesseract_cmd = "C:\\Users\\sgeorge3\\AppData\\Local\\Tesseract-OCR\\tesseract.exe"
 
 # Function to check if any valid words are found in the text from the image
@@ -149,6 +140,7 @@ while True:
                             print("Invalid movement option.")
                     else:
                         print("This system does not exist, please try again or check if this system is valid.")
+                        break                     
             break
         else:
             print("No authorized user detected, please try again if you think you may have clearance.")
