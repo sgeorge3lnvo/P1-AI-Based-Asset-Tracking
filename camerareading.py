@@ -1,3 +1,10 @@
+
+#Version 1
+# Last updated 6/13/24
+# Not up to date, this code goes over the basic actions that are expected of this project
+# This code is dependent on python libararies and has not been implemented with Intel OpenVino as of yet.
+
+
 import cv2
 import numpy as np
 from pytesseract import image_to_string
